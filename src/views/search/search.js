@@ -44,7 +44,6 @@ const getStories = async (filterType,datatype,timeBefore,page) => {
     await axios.get(`https://hn.algolia.com/api/v1/${filterType}?tags=${datatype}&numericFilters=created_at_i>${timeBefore}&query=${searchQuery}&page=${page}&hitsPerPage=10`)
     .then((resp) => {
       setStories(resp.data.hits);
-      console.log(resp.data.hits)
       setTotalPages(resp.data.nbPages)
       setLoading(false)
     })                                                                                                                                                                                                                  

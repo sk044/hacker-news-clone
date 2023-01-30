@@ -34,7 +34,6 @@ const getStories = async (page) => {
         .then((resp) => {
           setStories(resp.data.hits);
           setTotalPages(resp.data.nbPages)
-          console.log(resp.data)
           setLoading(false)
   })
   .catch((err) => {
